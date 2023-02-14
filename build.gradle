@@ -1,13 +1,23 @@
-plugins {
-	id 'java'
+allprojects {
+    //坐标
+    group 'org.example'
+    version '1.0-SNAPSHOT'
+    //仓库地址
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://repo.huaweicloud.com/repository/maven" }
+        mavenLocal()
+        mavenCentral()
+    }
 }
-sourceCompatibility = 17
-group 'org.example'
-version '1.0-SNAPSHOT'
-repositories {
-    maven { url "https://maven.aliyun.com/repository/public" }
-    maven { url "https://repo.huaweicloud.com/repository/maven" }
-    mavenLocal()
-    mavenCentral()
+subprojects {
+    apply plugin: 'java'
+    //源码和编译jdk版本
+    sourceCompatibility = 17
+    targetCompatibility = 17
 }
+
+
+
+
 
