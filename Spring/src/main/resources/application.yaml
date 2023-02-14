@@ -1,0 +1,8 @@
+spring:
+  #  ?????
+  profiles:
+    active: dev,test,production
+  #  ??banner
+  banner:
+    charset: UTF-8
+    location: classpath:banner.txt
