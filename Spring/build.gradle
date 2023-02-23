@@ -4,6 +4,8 @@ plugins{
 }
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'io.netty:netty-common:4.1.77.Final'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

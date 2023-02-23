@@ -1,16 +1,15 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.AbstractBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.boot.autoconfigure.conditionr.OnBeanCondition;
-import org.springframework.boot.autoconfigure.condition.OnClassCondition;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.PostProcessorRegistrationDelegate;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -53,7 +52,7 @@ import java.util.List;
 @Description("")
 @ImportRuntimeHints({})/*云原生支持*/
 @Lazy
-@Primary/*兜底bean*/
+@Primary/*兜底bean，多个同类bean使用*/
 @Profile({})/*执行的profile*/
 @PropertySources({})/*配置序列化*/
 @Role(BeanDefinition.ROLE_INFRASTRUCTURE)/*bean的角色*/
@@ -62,10 +61,18 @@ import java.util.List;
 @Repository
 @Order
 public class SpringBean {
-    /**
-     * 扫描包
-     */
+
+    @Autowired
+    ApplicationContext applicationContext;
+
     public static void main(String[] args) {
 
     }
+
+    public void getBean(){
+        /*通过上下文获取bean，策略工厂模式*/
+        Object xxx = applicationContext.getBean("xxx");
+    }
+
+
 }

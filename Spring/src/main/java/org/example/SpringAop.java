@@ -16,6 +16,7 @@ import org.springframework.context.annotation.EnableLoadTimeWeaving;
  * final和static方法不能被代理
  * 字节码重写分为运行时重写和类加载时重写，运行时重写使用Instrument的方式
  * JDK代理使用InvocationHandler实现代理类的构建，通过Proxy.newProxyInstance直接生成目标类实例（$Proxy0）,目标类通过反射调用代理方法
+ * 反射慢在首次调用时的通过名字查找类和类的加载，后续调用性能和原生调用相差不大
  * @author luyunji
  * @see https://www.cnblogs.com/takumicx/p/10150344.html
  */

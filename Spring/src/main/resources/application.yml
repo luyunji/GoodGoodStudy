@@ -6,3 +6,6 @@ spring:
   banner:
     charset: UTF-8
     location: classpath:banner.txt
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
