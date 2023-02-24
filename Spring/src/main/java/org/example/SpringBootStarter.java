@@ -14,7 +14,8 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * spring启动学习应用
  * 添加注解{@link SpringBootApplication}
  * 默认profile是default
- * 启动程序，打包//todo
+ * 启动程序，打包，默认可以只加载spring-boot容器，可以打包成docker容器和war包
+ * 使用内部容器可以选择Jetty，Undertow，可以制作成service
  *
  * @author by luyunji
  * @see <a href="https://www.baeldung.com/spring-cloud-bootstrap-properties">bootstrap.yaml与application.yaml说明</a>

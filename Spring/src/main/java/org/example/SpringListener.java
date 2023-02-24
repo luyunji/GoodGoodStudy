@@ -11,6 +11,7 @@ import org.springframework.context.event.EventListenerMethodProcessor;
 /**
  * 在BeanFactory启动的后置处理器中，{@link EventListenerMethodProcessor}会把所有监听器注册到监听管理器中
  * 同时spring具备Runner机制，提供在启动后需要加入配置或者处理逻辑
+ * 标准事件，contextRefreshed,contextStarted,ContextStopped,ContextClosedEvent,RequestHandledEvent
  * {@link org.springframework.boot.ApplicationRunner}{@link org.springframework.boot.CommandLineRunner}
  * @author luyunji
  */
@@ -22,6 +23,7 @@ public class SpringListener implements ApplicationListener<ApplicationEvent> {
 
     /**
      * 注解式监听
+     * @param event ...
      */
     @EventListener(ApplicationEvent.class)
     public void listen(ApplicationEvent event) {

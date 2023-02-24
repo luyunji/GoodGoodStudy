@@ -17,24 +17,43 @@ import org.springframework.context.annotation.EnableLoadTimeWeaving;
  * 字节码重写分为运行时重写和类加载时重写，运行时重写使用Instrument的方式
  * JDK代理使用InvocationHandler实现代理类的构建，通过Proxy.newProxyInstance直接生成目标类实例（$Proxy0）,目标类通过反射调用代理方法
  * 反射慢在首次调用时的通过名字查找类和类的加载，后续调用性能和原生调用相差不大
+ *
  * @author luyunji
- * @see https://www.cnblogs.com/takumicx/p/10150344.html
+ * <a href="https://www.cnblogs.com/takumicx/p/10150344.html">...</a>
  */
 @EnableAspectJAutoProxy
 @EnableLoadTimeWeaving/*Instrumentation接口实现*/
 @Aspect
 public class SpringAop {
 
+    /**
+     *
+     */
     @Pointcut
-    void pointCut(){}
+    void pointCut() {
+    }
 
+    /**
+     *
+     */
     @Before("pointCut()")
-    public void before(){}
+    public void before() {
+    }
 
+    /**
+     *
+     */
     @After("pointCut()")
-    public void after(){}
+    public void after() {
+    }
 
+    /**
+     * @param proceedingJoinPoint 方法入参
+     * @return 方法出参
+     */
     @Around("pointCut()")
-    public void around(ProceedingJoinPoint proceedingJoinPoint){}
+    public Object around(ProceedingJoinPoint proceedingJoinPoint) {
+        return null;
+    }
 
 }

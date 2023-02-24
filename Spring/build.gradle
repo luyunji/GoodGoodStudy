@@ -7,5 +7,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'io.netty:netty-common:4.1.77.Final'
+    implementation 'org.hibernate.validator:hibernate-validator'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

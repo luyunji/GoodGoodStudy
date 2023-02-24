@@ -7,8 +7,8 @@ import java.util.Locale;
 
 /**
  * 使用spring-i18n国际化支持，支持spring-validate校验和国际化消息
- * {@link /i18n/messages}使用多语言消息配置消息
- * spring有默认i18n的配置{@link /application.yml}
+ * /i18n/messages 使用多语言消息配置消息
+ * spring有默认i18n的配置/application.yml
  * @author luyunji
  */
 public class SpringI18n {
@@ -17,6 +17,10 @@ public class SpringI18n {
 
     private static final ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 
+    /**
+     *
+     * @param args ...
+     */
     public static void main(String[] args) {
         messageSource.setDefaultEncoding(StandardCharsets.UTF_8.displayName());
         messageSource.setBasename("i18n/messages");
@@ -24,6 +28,12 @@ public class SpringI18n {
         String name = getMessage("name","luyunji");
     }
 
+    /**
+     *
+     * @param key 消息key
+     * @param objs 消息入参
+     * @return 消息拼装
+     */
     public static String getMessage(String key, Object... objs) {
         return messageSource.getMessage(key, objs, i18n.get());
     }
