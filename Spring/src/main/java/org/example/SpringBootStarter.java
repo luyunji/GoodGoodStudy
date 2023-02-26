@@ -16,6 +16,8 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * 默认profile是default
  * 启动程序，打包，默认可以只加载spring-boot容器，可以打包成docker容器和war包
  * 使用内部容器可以选择Jetty，Undertow，可以制作成service
+ * 热部署可以使用dev-tools,hot swap，Jrebel <a href="https://tech.meituan.com/2022/03/17/java-hotswap-sonic.html">...</a>
+ * 支持spring-actuator,使用把jmx的Mbean通过endpoint的方式进行开放，springboot-admin可接入成为监控系统，支持报警
  *
  * @author by luyunji
  * @see <a href="https://www.baeldung.com/spring-cloud-bootstrap-properties">bootstrap.yaml与application.yaml说明</a>

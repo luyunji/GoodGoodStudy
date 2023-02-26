@@ -9,3 +9,13 @@ spring:
   messages:
     basename: i18n/messages
     encoding: UTF-8
+  # 应用bean懒加载
+  main:
+    lazy-initialization: true
+#    异步任务线程池
+  task:
+    execution:
+      pool:
+        core-size: 1
+  liquibase:
+    clear-checksums: true
