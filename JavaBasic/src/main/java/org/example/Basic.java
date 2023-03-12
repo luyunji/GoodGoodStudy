@@ -1,9 +1,6 @@
 package org.example;
 
 import java.nio.charset.Charset;
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * 继承，多态，封装
@@ -35,6 +32,9 @@ import java.util.List;
  * 异常分为受检查异常和运行时异常
  * super必须在程序第一行
  * 默认是unicode编码
+ * {@link java.io.Serializable}序列号用于判断两个对象是否一致
+ * {@link System#currentTimeMillis()}自1970以后的毫秒数，某些32位系统会出现2038问题，mysql使用int（4字节）存储时间戳便会出现
+ * {@link System#nanoTime()}只有时间范围，不能表示时间，292年范围，不受系统时钟影响
  */
 public class Basic {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * {@link java.lang.ThreadLocal}多线程中为每一个线程创建单独的变量副本的类,使用数组进行存储，有hash冲突会在数据后1个存放
+ * {@link java.lang.ThreadLocal}多线程中为每一个线程创建单独的变量副本的类,使用数组进行存储，有hash冲突会在数据后1个存放,数组中的entry对象依然存在，导致Value仍在，引用链无法消除
  * 使用的最多session管理和数据库链接管理
  * 线程池使用ThreadLocal会造成内存泄露，在线程池重复实力化ThreadLocal后，并且ThreadLocal是个大对象，容易造成内存泄露
  * 强引用，线程中有直接依赖的（默认）

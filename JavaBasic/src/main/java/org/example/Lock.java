@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * 锁机制，实现对共享资源互斥访问
@@ -10,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 自适应自旋，由前一次锁上的自旋时间和锁的拥有者状态决定
  * volatile,基于内存屏障保证了可见性，由于处理器缓存所以缓存在数据不可见的情况，long和double分为高32位和低32位，普通读/写可能不是原子性，禁止重排序
  * {@link java.util.concurrent.locks.ReentrantLock},代码维度实现的锁，能够控制线程自旋等待。对比synchronized,是可中断的，并且可以设置等待时间，可实现公平锁，可以绑定多个条件对象
+ * 加锁次数和解锁次数要保持一致
  * 除非需要使用 ReentrantLock 的高级功能，否则优先使用 synchronized
  * 单例实现，双重检查加锁(DCL)
  * final可以保证其他线程在读取前，一定会先读到final对象的引用，必须在构造函数前声明完成
@@ -32,5 +34,12 @@ public class Lock {
         reentrantLock.lock();
         reentrantLock.tryLock();
         reentrantLock.unlock();
+        ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
+        ReentrantReadWriteLock.WriteLock writeLock = reentrantReadWriteLock.writeLock();
+        ReentrantReadWriteLock.ReadLock readLock = reentrantReadWriteLock.readLock();
+        writeLock.lock();
+        writeLock.unlock();
+        readLock.lock();
+        readLock.unlock();
     }
 }
