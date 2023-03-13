@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 /**
  * JUC是Java并发框架
@@ -43,7 +42,7 @@ import java.util.stream.Collectors;
  * {@link java.util.concurrent.ScheduledThreadPoolExecutor}延迟和定期线程池,DelayedWorkQueue控制任务执行时间，一般有延时和周期执行两个参数
  * FixedRate固定周期执行，FixedDelay固定延时执行，不能调整最大线程数,使用的是无界队列
  * {@link java.util.concurrent.ForkJoinPool},是一种并行计算能力框架,核心是分治算法。每个线程都有自己的工作队列，也可以窃取其他队列
- * parallelStream默认使用ForkJoinPool，可以用于计算排序处理，大量多任务处理可以通过少数线程实现，fork（执行任务），join（等待任务结果），compute（）
+ * parallelStream默认使用ForkJoinPool，可以用于计算排序处理，大量多任务处理可以通过少数线程实现，fork（执行任务），join（等待任务结果）
  * @author luyunji
  */
 public class JUC {
