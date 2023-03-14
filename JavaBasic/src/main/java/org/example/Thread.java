@@ -3,7 +3,7 @@ package org.example;
 /**
  * 使用线程
  * 实现{@link Runnable}{@link java.util.concurrent.Callable}，Runnable无返回值，Callable有返回值
- * 继承{@link java.lang.Thread}
+ * 继承{@link java.lang.Thread}，线程的默认栈空间是128k
  * {@link java.lang.Thread#setDaemon(boolean)}守护线程，当所有非守护线程结束时，程序也就终止，同时会杀死所有守护线程
  * {@link java.lang.Thread#yield()}只是对线程调度器的一个建议，而且也只是建议具有相同优先级的其它线程可以运行
  * {@link java.lang.Thread#join()}在线程中调用另一个线程的 join() 方法，会将当前线程挂起，而不是忙等待，直到目标线程结束
